@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <!-- Student Grade Checker
+Create a simple web page that displays the name and grade of a student, and then checks whether the student has passed or failed based on their grade (assuming a passing grade is 50 or above).
+
+
+*use an object to do the assignment* -->
+  <body>
+    <div class="">
+      <input type="text" id="textInput" class="border" placeholder="enter a name"/>
+      <input type="number" id="scoreInput" class="border" placeholder="enter your score"/>
+     
+      <button id="btn" class="border mt-3">submit</button>
+       <p id="output"></p>
+    </div>
+
+    <script>
+      let btn = document.getElementById("btn")
+      let output = document.getElementById("output")
+
+      const student = {
+          name : "",
+          score : 0,
+      }
+
+      btn.addEventListener("click" , ()=> {
+        student.name  = document.getElementById("textInput").value 
+         student.score =  document.getElementById("scoreInput").value
+
+
+        if(student.score >= 50){
+            output.textContent =  `${student.name} you PASSED the course with a score of ${student.score} `
+        }else{
+            output.textContent =  `${student.name} you FAILED the course with a score of ${student.score} `
+        }
+      })
+
+    </script>
+  </body>
+</html>
